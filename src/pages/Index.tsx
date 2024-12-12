@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { FeaturedEyewear } from "@/components/FeaturedEyewear";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Button } from "@/components/ui/button";
 import { Eye, Glasses, Heart, MapPin, Phone, Calendar } from "lucide-react";
@@ -59,6 +60,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Featured Eyewear Section */}
+      <FeaturedEyewear />
 
       {/* Testimonials Section */}
       <TestimonialsSection />
