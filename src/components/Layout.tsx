@@ -1,7 +1,12 @@
 import { Navigation } from "./Navigation";
 import { SocialLinks } from "./SocialLinks";
+import { ReactNode } from "react";
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />

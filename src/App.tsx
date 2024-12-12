@@ -7,10 +7,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Index />} />
-          <Route path="/explore" element={<ExploreCollection />} />
-        </Route>
+        <Route path="/" element={<Layout><Index /></Layout>} />
+        <Route path="/explore" element={<Layout><ExploreCollection /></Layout>} />
       </Routes>
     </Router>
   );
