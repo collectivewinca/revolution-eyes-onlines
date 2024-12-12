@@ -1,24 +1,11 @@
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { SocialLinks } from "@/components/SocialLinks";
 import { Button } from "@/components/ui/button";
-import { Eye, Glasses, Heart, MapPin, Phone, Calendar, User } from "lucide-react";
+import { Eye, Glasses, Heart, MapPin, Phone, Calendar } from "lucide-react";
 
 const Index = () => {
-  const testimonials = [
-    {
-      text: "The team at Revolution Eyes provided exceptional care. My new glasses are perfect!",
-      author: "Sarah M."
-    },
-    {
-      text: "Best eye care experience I've had in Tribeca. Professional and friendly staff.",
-      author: "Michael R."
-    },
-    {
-      text: "They made the entire process so easy and comfortable. Highly recommend!",
-      author: "David L."
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -27,8 +14,8 @@ const Index = () => {
       <section className="relative py-20">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1487958449943-2429e8be8625"
-            alt="Modern office building"
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+            alt="Modern optometry office"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
@@ -49,35 +36,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="flex-1">
-              <h2 className="text-3xl font-bold text-primary mb-6">About Revolution Eyes</h2>
-              <p className="text-gray-600 mb-4">
-                Located in the heart of Tribeca, Revolution Eyes has been providing exceptional eye care services since 2008. Our commitment to using the latest technology, combined with our experienced staff, ensures that you receive the highest quality eye care available.
-              </p>
-              <p className="text-gray-600">
-                We believe that clear vision is essential to your quality of life, and we're dedicated to helping you achieve optimal eye health while finding the perfect eyewear to match your style.
-              </p>
-            </div>
-            <div className="flex-1">
-              <img 
-                src="https://images.unsplash.com/photo-1483058712412-4245e9b90334"
-                alt="Modern workspace"
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section id="services" className="py-20">
         <div className="container mx-auto px-6">
           <h2 className="text-3xl font-bold text-primary mb-12 text-center">Our Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <ServiceCard 
               Icon={Eye}
               title="Comprehensive Eye Exams"
@@ -97,50 +60,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Eyewear Section */}
-      <section id="eyewear" className="py-20 bg-secondary">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-primary mb-12 text-center">Featured Eyewear</h2>
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <img 
-              src="https://images.unsplash.com/photo-1496307653780-42ee777d4833"
-              alt="Stylish glasses"
-              className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-            />
-            <img 
-              src="https://images.unsplash.com/photo-1487958449943-2429e8be8625"
-              alt="Modern frames"
-              className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-            />
-            <img 
-              src="https://images.unsplash.com/photo-1483058712412-4245e9b90334"
-              alt="Designer eyewear"
-              className="rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-            />
-          </div>
-          <div className="text-center">
-            <Button variant="outline" className="bg-white">
-              View Full Collection
-            </Button>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold text-primary mb-12 text-center">What Our Patients Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <User className="h-8 w-8 text-primary mb-4" />
-                <p className="text-gray-600 mb-4">{testimonial.text}</p>
-                <p className="font-semibold text-primary">{testimonial.author}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-secondary">
@@ -151,19 +72,25 @@ const Index = () => {
               <div className="space-y-4">
                 <div className="flex items-start space-x-2 text-gray-600">
                   <MapPin className="h-5 w-5 mt-1" />
-                  <p>123 Greenwich Street<br />New York, NY 10007</p>
+                  <p>25 Murray Street<br />New York, NY</p>
                 </div>
                 <div className="flex items-center space-x-2 text-gray-600">
                   <Phone className="h-5 w-5" />
                   <p>(212) 555-0123</p>
                 </div>
-                <Button variant="outline" className="mt-4">
-                  Get Directions
-                </Button>
+                <div className="mt-4">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.2219901290355!2d-74.00981682427994!3d40.71430427132896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a1f33f4b837%3A0x7920a4b0c8bc6246!2s25%20Murray%20St%2C%20New%20York%2C%20NY%2010007!5e0!3m2!1sen!2sus!4v1710834050087!5m2!1sen!2sus"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg shadow-md"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="flex-1 h-[400px] w-full bg-white rounded-lg shadow-md">
-              {/* Map would go here - implement with Google Maps */}
             </div>
           </div>
         </div>
@@ -172,7 +99,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-primary text-white py-12">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-4 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">Revolution Eyes</h3>
               <p className="text-white/80">Providing exceptional eye care to the Tribeca community since 2008.</p>
@@ -188,7 +115,30 @@ const Index = () => {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Hours</h3>
-              <p className="text-white/80">Monday - Friday: 9am - 6pm<br />Saturday: 10am - 4pm<br />Sunday: Closed</p>
+              <p className="text-white/80">
+                Monday - Friday: 9am - 6pm<br />
+                Saturday: 10am - 4pm<br />
+                Sunday: Closed
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
+              <SocialLinks />
+              <div className="mt-4">
+                <a
+                  href="https://g.page/revolution-eyes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white inline-flex items-center"
+                >
+                  <img
+                    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png"
+                    alt="Google Business"
+                    className="h-6 mr-2"
+                  />
+                  Review us on Google
+                </a>
+              </div>
             </div>
           </div>
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
